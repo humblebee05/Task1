@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1 id="slackUserName">Hamdallah</h1>
+<img src="image.jpg" alt="Hamdallah" id="slackDisplayImage">
+<p id="currentDayOfTheweek"></p>
+<p id="currentUTCTime"></p>
+<h4 id="myTrack">Frontend</h4>
+<a href="https://github.com/humblebee05/Task1.git" id="gitHubURL">GitHub Link</a>
+
+<script>
+var today = new Date();
+var day = today.getDay();
+var daylist = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+document.getElementById("currentDayOfTheweek").innerHTML =  daylist[day];
+
+
+function updateTime(){
+let currentTime = new Date();
+let currentTimemillisec = currentTime.getTime();
+let currentUTime =  currentTime.toUTCString();
+document.getElementById("currentUTCTime").innerHTML = currentTimemillisec;
+}
+setInterval(updateTime,1000);
+</script>
+</body>
+</html>
